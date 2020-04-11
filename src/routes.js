@@ -1,4 +1,10 @@
-import express from 'express'; //importando a dependencia do express
-import Routes from express.Router(); //separando o routes do express
+const express = require('express'); //importando a dependencia do express
+const routes = express.Router(); //separando o routes do express
+const AluguelController = require('../src/Controllers/AluguelController');
+const UsuarioController = require('../src/Controllers/UsuarioController');
 
-export default Routes;
+routes.post('/aluguel', AluguelController.handleNovoAluguel);
+
+routes.post('/cadastro', UsuarioController.login.CadastrarUsuario);
+
+module.exports = routes;
